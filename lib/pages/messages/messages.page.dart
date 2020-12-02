@@ -98,7 +98,7 @@ class MessagesPage extends StatelessWidget {
 
     if (response != null) {
       Get.find<SnackbarService>()
-          .success('Atenção', 'Mensagens enviadas com sucesso! ');
+          .success('Atenção', 'Mensagens enviadas com sucesso!');
     }
   }
 }

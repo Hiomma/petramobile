@@ -1,4 +1,7 @@
 import 'package:get/get.dart';
+import 'package:petramobile/bindings/crms0000.binding.dart';
+import 'package:petramobile/pages/crms0000/crms0000-crud.page.dart';
+import 'package:petramobile/pages/crms0000/crms0000.page.dart';
 import 'package:petramobile/pages/home/home.page.dart';
 import 'package:petramobile/pages/login/login.page.dart';
 import 'package:petramobile/pages/messages/messages-crud.page.dart';
@@ -28,6 +31,15 @@ class Routes {
     GetPage(
       name: RoutesPath.MessagesInfo,
       page: () => MessagesInfoPage(),
+    ),
+    GetPage(
+      name: RoutesPath.Crms0000,
+      page: () => Crms0000Page(),
+      binding: Crms0000Binding(),
+    ),
+    GetPage(
+      name: RoutesPath.Crms0000Crud,
+      page: () => Crms0000CrudPage(),
     ),
   ];
 }
