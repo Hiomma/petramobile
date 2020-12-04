@@ -8,4 +8,5 @@ abstract class RoutesPath {
   static const MessagesInfo = '/messages/info';
   static const Crms0000 = '/crms0000';
   static const Crms0000Crud = '/crms0000/crud';
+  static const Crms0000Visualize = '/crms0000/visualize';
 }

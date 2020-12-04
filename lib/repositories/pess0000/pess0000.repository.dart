@@ -1,13 +1,13 @@
 import 'dart:convert' as convert;
 
 import 'package:petramobile/environments.dart';
-import 'package:petramobile/repositories/crms0000/crms0000.interface.dart';
+import 'package:petramobile/repositories/pess0000/pess0000.interface.dart';
 import 'package:petramobile/services/storage.service.dart';
 import 'package:petramobile/utils.dart';
 
-class Crms0000Repository implements ICrms0000Repository {
+class Pess0000Repository implements IPess0000Repository {
   @override
-  Future getCrms(String text) async {
+  Future getPessoas(String text) async {
     final token = encodeBase64(await Storage.getStorage('token'));
     var url = '${Environments.api}$token';
 
@@ -20,9 +20,9 @@ class Crms0000Repository implements ICrms0000Repository {
                 'type': 'POST',
                 'recurso': 'lista',
                 'body': {
-                  'tabela': 'CRMS0000',
-                  'where': "CRMS0000.CODIGO LIKE '%$text%'",
-                  'orderby': 'CRMS0000.CODIGO',
+                  'tabela': 'CLIE0000',
+                  'where': "CLIE0000.DESCRICAO LIKE '%${text.toUpperCase()}%'",
+                  'orderby': 'CLIE0000.CODIGO',
                   'pagina': 0,
                   'tipodesql': '0',
                   'idsql': []

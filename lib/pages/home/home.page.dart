@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:get/get.dart';
-import 'package:petramobile/controllers/messages.controller.dart';
+import 'package:petramobile/controllers/messages/messages.controller.dart';
 import 'package:petramobile/widgets/bar-chart/bar-chart.widget.dart';
 import 'package:petramobile/widgets/drawer/drawer.widget.dart';
 import 'package:petramobile/widgets/line-chart/line-chart.widget.dart';
-import 'package:petramobile/widgets/notification.widget.dart';
+import 'package:petramobile/widgets/notification/notification.widget.dart';
 
 class HomePage extends StatelessWidget {
   final GlobalKey<FormBuilderState> _fbKey = GlobalKey<FormBuilderState>();

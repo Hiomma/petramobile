@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:petramobile/bindings/crms0000.binding.dart';
-import 'package:petramobile/pages/crms0000/crms0000-crud.page.dart';
+import 'package:petramobile/pages/crms0000/crms0000-crud.dart';
+import 'package:petramobile/pages/crms0000/crms0000-visualize.page.dart';
 import 'package:petramobile/pages/crms0000/crms0000.page.dart';
 import 'package:petramobile/pages/home/home.page.dart';
 import 'package:petramobile/pages/login/login.page.dart';
@@ -40,6 +41,10 @@ class Routes {
     GetPage(
       name: RoutesPath.Crms0000Crud,
       page: () => Crms0000CrudPage(),
+    ),
+    GetPage(
+      name: RoutesPath.Crms0000Visualize,
+      page: () => Crms0000VisualizePage(),
     ),
   ];
 }

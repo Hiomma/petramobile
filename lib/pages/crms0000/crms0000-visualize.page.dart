@@ -2,12 +2,12 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:petramobile/controllers/crms0000.controller.dart';
+import 'package:petramobile/controllers/crms0000/crms0000.controller.dart';
 import 'package:petramobile/models/crms0000/crms0001.model.dart';
 import 'package:petramobile/widgets/drawer/drawer.widget.dart';
-import 'package:petramobile/widgets/notification.widget.dart';
+import 'package:petramobile/widgets/notification/notification.widget.dart';
 
-class Crms0000CrudPage extends GetView<Crms0000Controller> {
+class Crms0000VisualizePage extends GetView<Crms0000Controller> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,13 +23,14 @@ class Crms0000CrudPage extends GetView<Crms0000Controller> {
       body: Builder(
         builder: (context) => SingleChildScrollView(
           child: Container(
-              child: Column(
-            children: [
-              buildFirstCard(),
-              ...controller.selectedCrm.crms0001
-                  .map((e) => buildContentCard(e)),
-            ],
-          )),
+            child: Column(
+              children: [
+                buildFirstCard(),
+                ...controller.selectedCrm.crms0001
+                    .map((e) => buildContentCard(e)),
+              ],
+            ),
+          ),
         ),
       ),
       persistentFooterButtons: [

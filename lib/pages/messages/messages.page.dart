@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:petramobile/controllers/messages.controller.dart';
+import 'package:petramobile/controllers/messages/messages.controller.dart';
 import 'package:petramobile/models/noti0000/noti0000.model.dart';
 import 'package:petramobile/routes.dart';
 import 'package:petramobile/services/snackbar.service.dart';

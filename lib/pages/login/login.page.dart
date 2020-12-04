@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:get/get.dart';
-import 'package:petramobile/controllers/login.controller.dart';
+import 'package:petramobile/controllers/login/login.controller.dart';
 import 'package:petramobile/pages/login/organizacoes.modal.dart';
 import 'package:petramobile/routes.dart';
 import 'package:petramobile/services/snackbar.service.dart';
@@ -44,14 +44,15 @@ class LoginPage extends StatelessWidget {
                       child: Image.asset('assets/images/logo.png'),
                     ),
                     FormBuilderTextField(
-                      attribute: 'login',
+                      name: 'login',
                       decoration: InputDecoration(labelText: 'Usuário'),
-                      validators: [],
                     ),
                     FormBuilderTextField(
-                      attribute: 'senha',
+                      name: 'senha',
                       decoration: InputDecoration(labelText: 'Senha'),
-                      validators: [FormBuilderValidators.minLength(3)],
+                      validator: FormBuilderValidators.compose([
+                        FormBuilderValidators.minLength(context, 3),
+                      ]),
                       obscureText: true,
                     ),
                     GetX<LoginController>(

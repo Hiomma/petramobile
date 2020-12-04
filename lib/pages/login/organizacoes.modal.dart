@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:petramobile/controllers/login.controller.dart';
+import 'package:petramobile/controllers/login/login.controller.dart';
 import 'package:petramobile/models/organizacoes/organizacoes.model.dart';
 
 class OrganizacoesModal extends GetWidget<LoginController> {

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:petramobile/controllers/messages.controller.dart';
+import 'package:petramobile/controllers/messages/messages.controller.dart';
 import 'package:petramobile/models/auth0000/auth0000.model.dart';
 
 class MessagesCrudPage extends StatelessWidget {
@@ -29,37 +29,40 @@ class MessagesCrudPage extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(top: 8),
                     child: FormBuilderTextField(
-                      attribute: 'titulo',
-                      decoration: InputDecoration(
-                        labelText: 'Título',
-                        border: OutlineInputBorder(),
-                      ),
-                      validators: [
-                        FormBuilderValidators.required(),
-                        FormBuilderValidators.minLength(5)
-                      ],
-                    ),
+                        name: 'titulo',
+                        decoration: InputDecoration(
+                          labelText: 'Título',
+                          border: OutlineInputBorder(),
+                        ),
+                        validator: FormBuilderValidators.compose(
+                          [
+                            FormBuilderValidators.required(context),
+                            FormBuilderValidators.minLength(context, 5)
+                          ],
+                        )),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 8),
                     child: FormBuilderTextField(
-                      attribute: 'mensagem',
+                      name: 'mensagem',
                       decoration: InputDecoration(
                         labelText: 'Mensagem',
                         border: OutlineInputBorder(),
                       ),
                       minLines: 5,
                       maxLines: 5,
-                      validators: [
-                        FormBuilderValidators.required(),
-                        FormBuilderValidators.minLength(5)
-                      ],
+                      validator: FormBuilderValidators.compose(
+                        [
+                          FormBuilderValidators.required(context),
+                          FormBuilderValidators.minLength(context, 5)
+                        ],
+                      ),
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 8),
                     child: FormBuilderDateTimePicker(
-                      attribute: 'data_programada',
+                      name: 'data_programada',
                       inputType: InputType.both,
                       format: DateFormat('dd/MM/yyyy hh:mm'),
                       decoration: InputDecoration(
@@ -71,7 +74,7 @@ class MessagesCrudPage extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(top: 8),
                     child: FormBuilderChipsInput(
-                      attribute: 'empresas',
+                      name: 'empresas',
                       decoration: InputDecoration(
                         labelText: 'Empresas',
                         border: OutlineInputBorder(),
@@ -79,9 +82,11 @@ class MessagesCrudPage extends StatelessWidget {
                       chipBuilder: chipBuilder(),
                       suggestionBuilder: suggestionBuilder(),
                       findSuggestions: findSuggestions(controller),
-                      validators: [
-                        FormBuilderValidators.required(),
-                      ],
+                      validator: FormBuilderValidators.compose(
+                        [
+                          FormBuilderValidators.required(context),
+                        ],
+                      ),
                     ),
                   ),
                   Row(
